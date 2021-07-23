@@ -69,7 +69,7 @@ const getAllBooksHandler = (request, h) => {
   const { name, reading, finished } = request.query;
 
   if (name) {
-    const filteredBooks = books
+    const someBooks = books;
       .filter((book) => book.name.toLowerCase().includes(name.toLowerCase()))
       .map((book) => ({
         id: book.id,
@@ -79,7 +79,7 @@ const getAllBooksHandler = (request, h) => {
     const response = h.response({
       status: 'success',
       data: {
-        books: filteredBooks,
+        books: someBooks,
       },
     });
     response.code(200);
