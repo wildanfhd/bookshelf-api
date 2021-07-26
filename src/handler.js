@@ -69,7 +69,7 @@ const getAllBooksHandler = (request, h) => {
   const { name, reading, finished } = request.query;
 
   if (name) {
-    const someBooks = books;
+    const someBooks = books
       .filter((book) => book.name.toLowerCase().includes(name.toLowerCase()))
       .map((book) => ({
         id: book.id,
